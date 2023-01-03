@@ -12,7 +12,5 @@ public:
     }
     int lower_weight, upper_weight, cost;
     double x = 0, y = 0;
-
-    friend double euclid_distance(const Customer&a, const Customer&b);
 };
 #endif //GA_PRIORITY_DELIVER_CUSTOMER_H

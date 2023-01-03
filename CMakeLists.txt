@@ -3,4 +3,4 @@ project(ga_priority_deliver)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(ga_priority_deliver include/constants.h include/customer.h src/customer.cpp)
+add_executable(ga_priority_deliver include/constants.h include/customer.h include/route.h src/route.cpp include/utils.h src/utils.cpp src/constants.cpp main.cpp)
