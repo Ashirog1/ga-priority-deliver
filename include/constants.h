@@ -5,11 +5,19 @@
 #ifndef GA_PRIORITY_DELIVER_CONSTANTS_H
 #define GA_PRIORITY_DELIVER_CONSTANTS_H
 namespace constants {
-    const enum vehicle_types{truck, drone};
-    /// @brief default constraint parameter
-    extern int num_customer, num_truck, num_drone, time_limit;
-    extern double truck_speed, drone_speed;
-    extern int truck_capacity, drone_capacity;
-    extern int drone_duration;
+    enum vehicle_types{truck, drone};
 }
+
+class GlobalSettings {
+    /// @brief default constraint parameter
+public:
+    int num_customer, num_truck, num_drone, time_limit;
+    double truck_speed, drone_speed;
+    int truck_capacity, drone_capacity;
+    int drone_duration;
+
+    void read();
+};
+
+extern GlobalSettings global_settings;
 #endif //GA_PRIORITY_DELIVER_CONSTANTS_H

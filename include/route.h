@@ -4,10 +4,11 @@
 
 #ifndef GA_PRIORITY_DELIVER_ROUTE_H
 #define GA_PRIORITY_DELIVER_ROUTE_H
-#include <vector>
+#include "vector"
+#include "constants.h"
 class CustomerInfo {
 public:
-    int customer_id, weight;
+    int customer_id;
     CustomerInfo() {
         weight = 0;
         customer_id = -1;
@@ -25,7 +26,7 @@ private:
     std::vector<CustomerInfo> route;
     constants::vehicle_types vehicle_type;
 public:
-    Route() {};
+    Route();
     /// init route with vehicle type
     Route(constants::vehicle_types vehicle_type);
     bool valid_route();
