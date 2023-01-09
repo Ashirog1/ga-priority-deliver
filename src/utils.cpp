@@ -6,8 +6,6 @@
 #include "../include/utils.h"
 #include "cmath"
 
-GlobalSettings global_settings;
-
 int limit_weight(constants::vehicle_types vehicle_type) {
     if (vehicle_type == constants::truck)
         return global_settings.truck_capacity;
@@ -36,5 +34,5 @@ double euclid_distance(const T_Customer &a, const T_Customer &b) {
 
 template<class T_Customer>
 double time_travel(const T_Customer&a, const T_Customer&b, constants::vehicle_types vehicle_type) {
-    return euclid_distance(a, b) / speed_of_vehicle(vehicle_type);
+    return (double)euclid_distance<T_Customer>(a, b) / speed_of_vehicle(vehicle_type);
 }

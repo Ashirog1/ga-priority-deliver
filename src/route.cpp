@@ -3,6 +3,7 @@
 //
 #include "../include/route.h"
 #include "../include/utils.h"
+#include "../include/customer.h"
 
 Route::Route() {
     total_weight = 0;
@@ -11,7 +12,7 @@ Route::Route() {
     this->vehicle_type = constants::vehicle_types::truck;
     this->route.clear();
 
-    this->route.emplace_back(0, 0);
+    this->route.emplace_back(Customer());
 }
 
 Route::Route(constants::vehicle_types vehicle_type) {
@@ -21,7 +22,7 @@ Route::Route(constants::vehicle_types vehicle_type) {
     this->vehicle_type = vehicle_type;
     this->route.clear();
 
-    this->route.emplace_back(0, 0);
+    this->route.emplace_back(Customer());
 }
 
 /*return remain weight in current route*/
@@ -30,14 +31,20 @@ int Route::remain_weight() {
 }
 
 bool Route::valid_route() {
-    return total_time <= limit_time(this->vehicle_type);
+    return this->total_time <= limit_time(this->vehicle_type);
 }
 
-bool Route::is_good_to_append(CustomerInfo customer) {
+bool Route::is_good_to_append(Customer customer) {
     return true;
 }
 
-void Route::append(CustomerInfo customer) {
-    total_weight += customer.weight;
-    total_time += time_travel()
+void Route::pop() {
+
+}
+
+void Route::append(Customer customer) {
+    this->total_weight += customer.current_weight;
+    this->total_time += time_travel<Customer>(route.back(), customer, this->vehicle_type);
+
+    route.emplace_back(customer);
 }

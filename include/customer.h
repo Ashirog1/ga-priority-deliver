@@ -5,12 +5,14 @@
 #ifndef GA_PRIORITY_DELIVER_CUSTOMER_H
 #define GA_PRIORITY_DELIVER_CUSTOMER_H
 class Customer {
+private:
 public:
-    Customer() {
-        lower_weight = upper_weight = cost = 0;
-        x = y = 0;
-    }
-    int lower_weight, upper_weight, cost;
+    int lower_weight, upper_weight, cost, current_weight;
     double x = 0, y = 0;
+    int customer_id;
+    Customer();
+    Customer(const Customer&oth);
+    void read_customer();
+    void raise_current_weight(int delta);
 };
 #endif //GA_PRIORITY_DELIVER_CUSTOMER_H

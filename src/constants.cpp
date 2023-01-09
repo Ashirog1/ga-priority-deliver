@@ -4,7 +4,7 @@
 #include "../include/constants.h"
 #include "iostream"
 
-void GlobalSettings::read() {
+void GlobalSettings::read_global_settings() {
     std::cin >> num_customer >> num_truck >> num_drone;
     std::cin >> truck_speed >> drone_speed >> truck_capacity >> drone_capacity >> drone_duration;
 }

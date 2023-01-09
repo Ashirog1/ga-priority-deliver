@@ -16,8 +16,7 @@ public:
     int truck_capacity, drone_capacity;
     int drone_duration;
 
-    void read();
+    void read_global_settings();
 };
-
 extern GlobalSettings global_settings;
 #endif //GA_PRIORITY_DELIVER_CONSTANTS_H
