@@ -9,7 +9,7 @@
 #include "utils.h"
 
 
-class SolutionManage {
+class Solution{
 public:
     void test();
 };

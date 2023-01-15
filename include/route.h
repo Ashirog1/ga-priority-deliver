@@ -19,11 +19,14 @@ private:
 public:
     Route();
     /// init route with vehicle type
-    Route(constants::vehicle_types vehicle_type);
+    explicit Route(constants::vehicle_types vehicle_type);
     bool valid_route();
-    void append(Customer customer);
-    bool is_good_to_append(Customer customer);
+    void append(const Customer&customer);
+    bool is_good_to_append(const Customer&customer);
     int remain_weight();
+    bool is_appear(const Customer&customer);
     void pop();
+    int get_total_weight();
+    double get_total_time();
 };
 #endif //GA_PRIORITY_DELIVER_ROUTE_H

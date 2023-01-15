@@ -6,9 +6,6 @@
 // Created by linux on 1/15/23.
 //
 
-#ifndef GA_PRIORITY_DELIVER_MCF_H
-#define GA_PRIORITY_DELIVER_MCMF_H
-
 #include "vector"
 #include "climits"
 #include "queue"
@@ -34,7 +31,7 @@ void MinCostFlow::add_edge(int u, int v, int cap, int cost) {
 
 bool MinCostFlow::spfa(int source, int sink) {
     /*
-     * find shortest path from source to sink
+     * find the shortest path from source to sink
      */
     for (int v = 1; v <= num_vertex; ++v)
         distance[v] = inf;
@@ -57,7 +54,7 @@ bool MinCostFlow::spfa(int source, int sink) {
         }
     }
 
-    return distance[T] != inf;
+    return distance[sink] != inf;
 }
 
 std::pair<int64_t, int64_t> MinCostFlow::min_cost_flow(int source, int sink) {
@@ -71,7 +68,7 @@ std::pair<int64_t, int64_t> MinCostFlow::min_cost_flow(int source, int sink) {
         int flow_passed = INT_MAX;
 
         /*
-         * find index of edge from shortest path between source and sink
+         * find index of edge from the shortest path between source and sink
          */
         std::vector<int> path;
         for (int v = sink; v != source;) {
@@ -97,5 +94,3 @@ std::pair<int64_t, int64_t> MinCostFlow::min_cost_flow(int source, int sink) {
     }
     return {min_cost, flow};
 }
-
-#endif //GA_PRIORITY_DELIVER_MCF_H

@@ -25,10 +25,7 @@ private:
 public:
     MinCostFlow(int _num_vertex);
     void add_edge(int u, int v, int cap, int cost);
-    std::pair<int64_t, int64_t> min_cost_flow();
-    /// @brief: find shortest path from source to sink
     bool spfa(int source, int sink);
-
     std::pair<int64_t, int64_t> min_cost_flow(int source, int sink);
 };
 
