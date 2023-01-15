@@ -27,12 +27,10 @@ double limit_time(constants::vehicle_types vehicle_type) {
         return std::min(global_settings.time_limit, global_settings.drone_duration);
 }
 
-template<class T_Customer>
-double euclid_distance(const T_Customer &a, const T_Customer &b) {
+double euclid_distance(const Customer&a, const Customer&b) {
     return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
 }
 
-template<class T_Customer>
-double time_travel(const T_Customer&a, const T_Customer&b, constants::vehicle_types vehicle_type) {
-    return (double)euclid_distance<T_Customer>(a, b) / speed_of_vehicle(vehicle_type);
+double time_travel(const Customer&a, const Customer&b, constants::vehicle_types vehicle_type) {
+    return (double)euclid_distance(a, b) / speed_of_vehicle(vehicle_type);
 }

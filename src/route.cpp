@@ -44,7 +44,6 @@ void Route::pop() {
 
 void Route::append(Customer customer) {
     this->total_weight += customer.current_weight;
-    this->total_time += time_travel<Customer>(route.back(), customer, this->vehicle_type);
-
+    this->total_time += time_travel(route.back(), customer, this->vehicle_type);
     route.emplace_back(customer);
 }

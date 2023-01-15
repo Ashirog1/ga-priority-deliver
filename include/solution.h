@@ -10,6 +10,7 @@
 
 
 class SolutionManage {
+public:
     void test();
 };
 #endif //GA_PRIORITY_DELIVER_SOLUTION_H
