@@ -4,6 +4,9 @@
 
 #ifndef GA_PRIORITY_DELIVER_CONSTANTS_H
 #define GA_PRIORITY_DELIVER_CONSTANTS_H
+
+#include "customer.h"
+
 namespace constants {
     enum vehicle_types{truck, drone};
 }
@@ -19,4 +22,14 @@ public:
     void read_global_settings();
 };
 extern GlobalSettings global_settings;
+
+int limit_weight(constants::vehicle_types vehicle_type);
+
+double speed_of_vehicle(constants::vehicle_types vehicle_type);
+
+double limit_time(constants::vehicle_types vehicle_type);
+
+double euclid_distance(const Customer&a, const Customer&b);
+
+double time_travel(const Customer&a, const Customer&b, constants::vehicle_types vehicle_type);
 #endif //GA_PRIORITY_DELIVER_CONSTANTS_H
