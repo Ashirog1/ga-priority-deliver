@@ -5,7 +5,6 @@
 
 #include "include/constants.h"
 #include "include/solution.h"
-#include "include/utils.h"
 
 GlobalSettings global_settings;
 

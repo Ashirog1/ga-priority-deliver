@@ -3,11 +3,8 @@
 //
 
 #include "../include/route_set.h"
-#include "../include/constants.h"
 
 #include "cassert"
-
-GlobalSettings global_settings;
 
 void RouteSet::append(Route route) {
     assert(route.valid_route());
@@ -18,4 +15,3 @@ void RouteSet::append(Route route) {
 bool RouteSet::valid_route_set() {
     return this->total_time <= global_settings.time_limit;
 }
-
