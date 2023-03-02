@@ -25,7 +25,7 @@ double speed_of_vehicle(constants::vehicle_types vehicle_type) {
         return global_settings.drone_speed;
 }
 
-double limit_time(constants::vehicle_types vehicle_type) {
+double time_limit(constants::vehicle_types vehicle_type) {
     if (vehicle_type == constants::truck)
         return global_settings.time_limit;
     else

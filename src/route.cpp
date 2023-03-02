@@ -28,7 +28,7 @@ int Route::remain_weight() {
 }
 
 bool Route::valid_route() {
-    if (this->total_time > limit_time(this->vehicle_type))
+    if (this->total_time > time_limit(this->vehicle_type))
         return false;
     if (this->total_weight > limit_weight(this->vehicle_type))
         return false;

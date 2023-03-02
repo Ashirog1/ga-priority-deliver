@@ -16,7 +16,9 @@ class Solution{
 private:
     std::vector<Route> truck_route;
     std::vector<RouteSet> drone_route;
+    std::vector<int> current_weight;
 public:
-
+    Solution();
+    void append(Route& route, Customer customer);
 };
 #endif //GA_PRIORITY_DELIVER_SOLUTION_H

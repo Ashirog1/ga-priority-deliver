@@ -27,7 +27,7 @@ int limit_weight(constants::vehicle_types vehicle_type);
 
 double speed_of_vehicle(constants::vehicle_types vehicle_type);
 
-double limit_time(constants::vehicle_types vehicle_type);
+double time_limit(constants::vehicle_types vehicle_type);
 
 double euclid_distance(const Customer&a, const Customer&b);
 

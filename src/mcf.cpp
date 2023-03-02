@@ -2,10 +2,6 @@
 // Created by linux on 1/15/23.
 //
 
-//
-// Created by linux on 1/15/23.
-//
-
 #include "vector"
 #include "climits"
 #include "queue"
